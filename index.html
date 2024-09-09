@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imersão Alura/Gemini</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+      <!-- <nav><ul><li><a href="#noticias"></a></li></ul></nav> --> 
+      <section id="noticias"><fieldset><legend>SELECIONE O TEMA</legend>
+        <label><span id="nomeDaPessoa"></span>. Escolha um tema:
+        <select id="assunto">
+            <option value="">SELECIONE</option>
+        </select>
+        </label>
+        </fieldset>
+        <hr />
+    </section>
+    <button onclick="assunto=cinema;">
+        <img class="cinema" src="data:image/gif;base64,R0lGODlhRwBHAJEAAP///wAAAAAAAAAAACH5BAkAAAEALAAAAABHAEcAAAhzAAMIHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMqXcq0qdOnUKNKnUq1qtWrWLNq3cq1q9evYMOKHbs1IAA7" /></button>
+      <button>
+        <img class="musica"  src="data:image/gif;base64,R0lGODlhRwBHAJEAAP///wAAAAAAAAAAACH5BAkAAAEALAAAAABHAEcAAAhzAAMIHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMqXcq0qdOnUKNKnUq1qtWrWLNq3cq1q9evYMOKHbs1IAA7" /></button>
+      </header>
+<main>
+       
+  <section id="resultados">
+
+  </section>
+
+  
+</main>
+<footer></footer>
+<dialog open id="modalAssunto">
+  <form method="dialog">
+    <br>
+      <p>
+        Escolha um tema inicial
+      </p>
+    </br />
+    <hr />
+    <menu>
+      <!-- <button id="cancel" type="reset" onclick="document.dialog.close([returnValue])">Cancel</button>
+      <button type="submit" onclick="document.dialog.close([returnValue]);">Confirmar</button> -->
+      <button id="close" onclick="closeDialog();">fechar</button>
+      <button id="cancel" type="reset">Cancelar</button>
+      <button type="submit" id="confirm">Confirmar</button>
+      <button onclick="openDialog()">open</button>
+    </menu>
+  </form>
+</dialog>
+  <script type="module" src="./scripts-gemini.js"></script>
+  <script>
+
+const dialog = document.getElementById('modalAssunto');
+const buttonClose = document.querySelector("#close");
+const buttonCancel = document.querySelector("#cancel");
+const buttonConfirm = document.querySelector("#confirm");
+
+function openDialog() {
+  dialog.style.display='block';
+  dialog.showModal();
+  
+}
+
+function closeDialog(event) {
+  // If the target dialog is
+ // if (!event.target.contains(dialog)) return;
+ dialog.style.display='none';
+ //dialog.remove();
+  dialog.close();
+}
+
+
+//button.addEventListener('click', openDialog);
+// buttonClose.addEventListener('click', closeDialog());
+// buttonCancel.addEventListener('click', closeDialog);
+// buttonConfirm.addEventListener('click', closeDialog(dialog));
+
+
+//capturarEndpoints(assunto="música");
+
+  </script>
+</body>
+</html>

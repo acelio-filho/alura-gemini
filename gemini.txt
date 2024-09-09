@@ -1,0 +1,13 @@
+sugestão de código pra ver o head da página e ver se tem endpoints
+
+abrir o site, F12 . No console
+
+function findEndpoints() {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://www.exemplo.com/');
+  xhr.onload = () => {
+    console.log(xhr.getAllResponseHeaders());
+    // Analisar os headers para encontrar links para a API
+  };
+  xhr.send();
+}
