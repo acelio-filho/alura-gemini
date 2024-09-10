@@ -1,14 +1,21 @@
 <!DOCTYPE html>
+<!-- Imersão Alura, apresentando o Gemini, que foi utilizado desde o início.
+Foi passada a idéia do projeto, com algumas lógicas de programação iniciais, e foi solicitado retornar os códigos em javascript
+ -->
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>imersão Alura/Gemini</title>
+    <title>Imersão Alura/Gemini 09/2024</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
+      <h1>AGREGADOR DE NOTÍCIAS</h1>
+      <p><img id="imagemPeril" src="" srcset="" class="float-left" />Projeto em javascript, para estudo de utilização do Google GEMINI como "colega de trabalho" para um projeto.</p>
+        <hr />
+        <p>Chamadas asíncronas à APIs REST de mais de um site ao mesmo tempo.<br /></p>
       <!-- <nav><ul><li><a href="#noticias"></a></li></ul></nav> --> 
       <section id="noticias"><fieldset><legend>SELECIONE O TEMA</legend>
         <label><span id="nomeDaPessoa"></span>. Escolha um tema:
@@ -19,9 +26,9 @@
         </fieldset>
         <hr />
     </section>
-    <button onclick="assunto=cinema;">
+    <button onclick="capturarEndpoints('cinema');" title="Buscar notícias sobre CINEMA" onfocus="this.style.borderColor='red';">
         <img class="cinema" src="data:image/gif;base64,R0lGODlhRwBHAJEAAP///wAAAAAAAAAAACH5BAkAAAEALAAAAABHAEcAAAhzAAMIHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMqXcq0qdOnUKNKnUq1qtWrWLNq3cq1q9evYMOKHbs1IAA7" /></button>
-      <button>
+      <button onclick="capturarEndpoints('música');" title="Buscar notícias sobre MÚSICA">
         <img class="musica"  src="data:image/gif;base64,R0lGODlhRwBHAJEAAP///wAAAAAAAAAAACH5BAkAAAEALAAAAABHAEcAAAhzAAMIHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMqXcq0qdOnUKNKnUq1qtWrWLNq3cq1q9evYMOKHbs1IAA7" /></button>
       </header>
 <main>
@@ -32,8 +39,8 @@
 
   
 </main>
-<footer></footer>
-<dialog open id="modalAssunto">
+<footer><button onclick="openDialog()">open</button></footer>
+<dialog id="modalAssunto">
   <form method="dialog">
     <br>
       <p>
@@ -42,12 +49,12 @@
     </br />
     <hr />
     <menu>
-      <!-- <button id="cancel" type="reset" onclick="document.dialog.close([returnValue])">Cancel</button>
-      <button type="submit" onclick="document.dialog.close([returnValue]);">Confirmar</button> -->
+      <button id="cancel" type="reset" onclick="document.dialog.close([returnValue])">Cancel</button>
+      <button type="submit" onclick="document.dialog.close([returnValue]);">Confirmar</button>
       <button id="close" onclick="closeDialog();">fechar</button>
       <button id="cancel" type="reset">Cancelar</button>
       <button type="submit" id="confirm">Confirmar</button>
-      <button onclick="openDialog()">open</button>
+      
     </menu>
   </form>
 </dialog>
@@ -60,7 +67,7 @@ const buttonCancel = document.querySelector("#cancel");
 const buttonConfirm = document.querySelector("#confirm");
 
 function openDialog() {
-  dialog.style.display='block';
+  dialog.style.display='flex';
   dialog.showModal();
   
 }
